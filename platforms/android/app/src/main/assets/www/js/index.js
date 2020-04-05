@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.getElementById('populateDetailsButton').addEventListener('click', this.populateDeviceDetails);
     },
 
     // deviceready Event Handler
@@ -40,6 +41,20 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    populateDeviceDetails: function(_e){
+        var deviceDetails = '';
+        deviceDetails += '<br/>cordova: ' + device.cordova;
+        deviceDetails += '<br/>model: ' + device.model;
+        deviceDetails += '<br/>platform: ' + device.platform;
+        deviceDetails += '<br/>uuid: ' + device.uuid;
+        deviceDetails += '<br/>version: ' + device.version;
+        deviceDetails += '<br/>manufacturer: ' + device.manufacturer;
+        deviceDetails += '<br/>isVirtual: ' + device.isVirtual;
+        deviceDetails += '<br/>serial: ' + device.serial;
+        deviceDetails += '<br/>available: ' + device.available;
+        document.querySelector("#deviceDetails").innerHTML = deviceDetails;
     }
 };
 
