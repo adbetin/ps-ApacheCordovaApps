@@ -20,11 +20,15 @@ const concat = require('concat');
   // valida la existencia del directorio
   await fs.ensureDir('www');
   // concatena todos los archivos en un bundle
-  await concat(files, './www/js/app-bundle.js');
+  // await concat(files, './www/js/app-bundle.js');
   // copia los estilos hacia un solo archivo
-  await fs.copyFile('./dist/angular9-poc/styles.css', 'www/css/styles.css');
+  // await fs.copyFile('./dist/angular9-poc/styles.css', 'www/css/styles.css');
   // copia los archivos de fuentes hacia el objetivo
-  await fs.copy('./dist/angular9-poc', 'www', { filter: filterFonts });
+  // await fs.copy('./dist/angular9-poc', 'www', { filter: filterFonts });
   // copia los assets de fuentes hacia el objetivo
-  await fs.copy('./dist/angular9-poc/assets', 'www/assets');
+  //await fs.copy('./dist/angular9-poc/assets', 'www/assets');
+
+
+  //copiar todo
+  await fs.copy('./dist/angular9-poc', 'www');
 })()
