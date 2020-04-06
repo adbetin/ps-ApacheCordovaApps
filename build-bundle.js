@@ -19,6 +19,7 @@ const concat = require('concat');
 
   // valida la existencia del directorio
   await fs.ensureDir('www');
+  await fs.emptyDir('www');
   // concatena todos los archivos en un bundle
   // await concat(files, './www/js/app-bundle.js');
   // copia los estilos hacia un solo archivo

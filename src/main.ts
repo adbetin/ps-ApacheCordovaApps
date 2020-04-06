@@ -13,8 +13,8 @@ function bootstrap() {
     .catch(err => console.error(err));
 }
 
-if (window['cordova']) {
-  document.addEventListener('deviceready', () => bootstrap());
-} else {
+//if (window['cordova']) {
+//  document.addEventListener('deviceready', () => bootstrap());
+//} else {
   bootstrap();
-}
+//}
